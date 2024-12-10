@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import messi from '../../assets/messi.jpg';
-import haaland from '../../assets/haaland.jpg'; 
-import neymar from '../../assets/neymar.jpg'; 
-import raphinha from '../../assets/raphinha.jpg'; 
-import lewandowski from '../../assets/lewandowski.jpg'; 
-import yamal from '../../assets/yamal.jpeg'; 
+import haaland from '../../assets/haaland.jpg';
+import neymar from '../../assets/neymar.jpg';
+import raphinha from '../../assets/raphinha.jpg';
+import lewandowski from '../../assets/lewandowski.jpg';
+import yamal from '../../assets/yamal.jpeg';
 const NewsDetail = () => {
     const { id } = useParams();
 
@@ -52,7 +52,7 @@ const NewsDetail = () => {
 
     if (!selectedNews) {
         return (
-            <div className="flex items-center flex-col p-[50px]">
+            <div className="flex items-center flex-col p-[50px]"> 
                 <p className="text-[32px] font-bold">Yangilik topilmadi</p>
                 <button className="hover:text-blue-700 mt-[50px] p-[15px] rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                     <Link to={"/"}>Asosiy sahifaga qaytish</Link>
@@ -61,15 +61,15 @@ const NewsDetail = () => {
         );
     }
 
-    return (
-        <div className="container mx-auto flex flex-col items-center gap-2 py-16">
-            <img className="w-[500px] flex text-center" src={selectedNews.Image} alt="" />
-            <h1 className="text-3xl font-bold text-gray-800">{selectedNews.title}</h1>
-            <p className="text-lg text-gray-600 mt-4">{selectedNews.content}</p>
-            <button className="hover:text-blue-700 p-[15px] mt-[100px] rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                <Link to={"/"}>Asosiy sahifaga qaytish</Link>
-            </button>
-        </div>
+    return (<div className="container mx-auto flex flex-col items-center  py-16">
+
+        <img className="w-[500px] flex text-center" src={selectedNews.Image} alt="" />
+        <h1 className="text-3xl font-bold text-gray-800">{selectedNews.title}</h1>
+        <p className="text-lg text-gray-600 mt-4">{selectedNews.content}</p>
+        <button className="hover:text-blue-700 p-[15px] mt-[100px] rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            <Link to={"/"}>Asosiy sahifaga qaytish</Link>
+        </button>
+    </div>
     );
 };
 

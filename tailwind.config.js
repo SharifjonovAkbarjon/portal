@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class', // Dark mode qo'shish
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -10,14 +11,14 @@ export default {
         'custom-gradient': 'linear-gradient(42.14deg, #9796F0 -17.31%, #FBC7D4 106.72%)',
       },
       container: {
-        center: true, // Containerni markazlashtirish
-        padding: '1rem', // Ichki bo'shliq (padding)
+        center: true,
+        padding: '1rem',
         screens: {
-          sm: '100%', 
+          sm: '100%',
           md: '720px',
           lg: '960px',
           xl: '1140px',
-          '2xl': '1596px', // 1596px kenglik 2xl ekranlar uchun
+          '2xl': '1596px',
         },
       },
       clipPath: {

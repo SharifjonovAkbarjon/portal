@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import logo from '../../assets/trace.svg';
 import { Link } from 'react-router-dom';
-import reklama from '../../assets/reklama.jpg'
+import reklama from '../../assets/reklama.jpg';
 
-const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
+const Navbar = ({ toggleDarkMode, darkMode }) => {
   return (
     <>
-    <div>
-      <img src={reklama} alt="" />
-    </div>
+      <div>
+        <img className='w-full' src={reklama} alt="Reklama" />
+      </div>
       <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} shadow-md sticky top-0 z-50`}>
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           <div className="text-2xl font-bold">
@@ -21,19 +19,19 @@ const Navbar = () => {
 
           <nav className="hidden md:flex space-x-6">
             <Link to={"/"}>
-              <p className='hover:text-blue-600'>Asosiy sahifa</p>
+              <p className="hover:text-blue-600">Asosiy sahifa</p>
             </Link>
             <Link to={"/news"}>
-              <p className='hover:text-blue-600'>Yangiliklar</p>
+              <p className="hover:text-blue-600">Yangiliklar</p>
             </Link>
             <Link to={"/jamiyat"}>
-              <p className='hover:text-blue-600'>Jamiyat</p>
+              <p className="hover:text-blue-600">Jamiyat</p>
             </Link>
             <Link to={"/sport"}>
-              <p className='hover:text-blue-600'>Sport</p>
+              <p className="hover:text-blue-600">Sport</p>
             </Link>
             <Link to={"/technology"}>
-              <p className='hover:text-blue-600'>Texnologiya</p>
+              <p className="hover:text-blue-600">Texnologiya</p>
             </Link>
           </nav>
 
@@ -46,7 +44,7 @@ const Navbar = () => {
             />
             {/* Dark Mode Toggle */}
             <button
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={toggleDarkMode}
               className="text-gray-700 hover:text-blue-600"
             >
               {darkMode ? (
@@ -69,30 +67,7 @@ const Navbar = () => {
         </div>
       </div>
     </>
-
   );
 };
 
 export default Navbar;
-
-
-// import React from 'react';
-// import { useDarkMode } from '../../context/DarkModeContext';
-
-// const Navbar = () => {
-//   const { darkMode } = useDarkMode();
-
-//   return (
-//     <div className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} shadow-md sticky top-0 z-50`}>
-//       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-//         <div className="text-2xl font-bold">Logo</div>
-//         <nav className="space-x-6">
-//           <a href="#" className="hover:text-blue-600">Home</a>
-//           <a href="#" className="hover:text-blue-600">About</a>
-//         </nav>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
